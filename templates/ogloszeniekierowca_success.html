@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Przejazd dodany</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='success.css') }}">
+</head>
+<body>
+  <section class="header">
+    <nav>
+      <a href="/"><img src="/static/images/pngwing.com.png"></a>
+      <div class="nav-links">
+                <ul>
+                    <li><a href="/">HOME</a></li>
+                    <li><a href="">CONTACT</a></li>
+                    {% if 'user_id' in session %}
+                        <li><a href="/profile">
+                            <img src="/static/images/img.png" class="user-photo"></a></li>
+                    {% else %}
+                        <li><a href="/login">LOGIN</a></li>
+                    {% endif %}
+                </ul>
+      </div>
+    </nav>
+  </section>
+    <div class="profile-container">
+        <h1>Przejazd został pomyślnie dodany</h1>
+        <a class="button" href="{{ url_for('index') }}">Powrót do strony głównej</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carpooling System</title>
+    <link rel="stylesheet" href="/static/styleogloszeniekierowca.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Dodaj linki do bibliotek jQuery UI -->
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+    <script>
+    $(function() {
+      var availableLocations = [
+        "Plac Grunwaldzki, Wrocław",
+        "Kolejowa 4, Trzebnica",
+        "Oława",
+        "Aleja Bielany, Wrocław",
+        "Dworzec Główny, Wrocław",
+        "Mirków",
+        "Smolec",
+        "Oleśnica"
+        // Dodaj więcej propozycji lokalizacji, jeśli jest to konieczne
+      ];
+
+      $("#starting-place").autocomplete({
+        source: availableLocations
+      });
+
+      $("#destination").autocomplete({
+        source: availableLocations
+      });
+    });
+    </script>
+</head>
+<body>
+<section class="header">
+    <nav>
+        <a href="/"><img src="/static/images/pngwing.com.png"></a>
+        <div class="nav-links">
+            <ul>
+                <li><a href="/">HOME</a></li>
+                <li><a href="">CONTACT</a></li>
+                {% if 'user_id' in session %}
+                <li><a href="/profile">
+                    <img src="/static/images/img.png" class="user-photo"></a></li>
+                {% else %}
+                <li><a href="/login">LOGIN</a></li>
+                {% endif %}
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
+        <section class="section">
+            <h2>Dodaj przejazd</h2>
+            <form method="POST" action="/ogloszenie">
+                <label for="starting-place">Miejsce początkowe:</label><br>
+                <input type="text" id="starting-place" name="starting-place" placeholder="Miejsce początkowe" required><br>
+
+                <label for="destination">Miejsce docelowe:</label><br>
+                <input type="text" id="destination" name="destination" placeholder="Miejsce docelowe" required><br>
+
+                <label for="cost">Koszt przejazdu:</label><br>
+                <input type="number" id="cost" name="cost" placeholder="Koszt przejazdu"><br>
+
+                <label for="special-luggage">Czy przewozisz specjalne bagaże?</label>
+                <input type="checkbox" id="special-luggage" name="special-luggage"><br>
+
+                <label for="starting-time">Data i czas rozpoczęcia:</label><br>
+                <input type="datetime-local" id="starting-time" name="starting-time" required><br>
+
+                <button type="submit">Dodaj przejazd</button>
+            </form>
+
+
+        </section>
+    </div>
+    <script>
+        function addRide() {
+            // Perform the logic to add the ride to the database
+
+            // Display the announcement message
+            var announcement = document.getElementById("announcement");
+            announcement.textContent = "Dodano twój przejazd do bazy danych.";
+        }
+    </script>
+</section>
+</body>
+</html>

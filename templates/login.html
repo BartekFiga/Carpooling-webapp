@@ -1,0 +1,23 @@
+<html>
+<head>
+  <title>Login</title>
+  <link rel="stylesheet" type="text/css" href="/static/stylelogin.css">
+</head>
+<body>
+  <div class="login-container">
+    <h1>Login</h1>
+    <form action="/login" method="POST">
+      <label for="email">Adres e-mail:</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="password">Hasło:</label>
+      <input type="password" id="password" name="password" required>
+
+      <button type="submit">Login</button>
+    </form>
+    <p class="signup-link">Nie masz konta? <a href="/signup">Zarejestruj się za darmo</a></p>
+
+    <p class="back-button"><a href="/">Wróć na stronę główną</a></p>
+  </div>
+</body>
+</html>

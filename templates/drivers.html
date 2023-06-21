@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carpooling System - Drivers</title>
+    <link rel="stylesheet" href="/static/styledrivers.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<section class="header">
+    <nav>
+        <a href="/"><img src="/static/images/pngwing.com.png"></a>
+        <div class="nav-links">
+            <ul>
+                <li><a href="/">HOME</a></li>
+                <li><a href="">CONTACT</a></li>
+                {% if 'user_id' in session %}
+                    <li><a href="/profile">
+                        <img src="/static/images/img.png" class="user-photo"></a></li>
+                {% else %}
+                    <li><a href="/login">LOGIN</a></li>
+                {% endif %}
+            </ul>
+        </div>
+    </nav>
+</section>
+
+<section class="container">
+    <div class="window">
+        <section class="drivers">
+            <h1 class="title">Znalezieni kierowcy</h1>
+            <p class="subtitle">Oto dostępna lista kierowców dopasowanych do twoich danych</p>
+            <ul class="driver-list">
+                {% for driver in drivers %}
+                    <li class="driver">
+                        <div class="driver-photo">
+                            <img src="{{ driver.photo }}" alt="Driver Photo">
+                        </div>
+                        <div class="driver-info">
+                            <p><strong>Imię:</strong> {{ driver.name }}</p>
+                            <p><strong>Nazwisko:</strong> {{ driver.surname }}</p>
+                            <p><strong>Telefon:</strong> {{ driver.phone }}</p>
+                            <p><strong>Miejsce początkowe:</strong> {{ driver.starting_place }}</p>
+                            <p><strong>Miejsce docelowe:</strong> {{ driver.destination }}</p>
+                            <p><strong>Data:</strong> {{ driver.date }}</p>
+                            <button class="reserve-button" onclick="reserveRide('{{ driver.id }}')">Zarezerwuj przejazd</button>
+                        </div>
+                    </li>
+                {% endfor %}
+            </ul>
+        </section>
+    </div>
+</section>
+
+<script>
+    function reserveRide(driverId) {
+        // Tutaj możesz dodać logikę rezerwacji przejazdu
+        // na podstawie identyfikatora kierowcy (driverId)
+        // np. wysłać żądanie HTTP do serwera, aby zarezerwować przejazd
+        alert("Przejazd został zarezerwowany dla kierowcy o ID: " + driverId);
+    }
+</script>
+
+</body>
+</html>

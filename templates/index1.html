@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carpooling System</title>
+  <link rel="stylesheet" href="/static/style.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Dodaj linki do bibliotek jQuery UI -->
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+  <script>
+  $(function() {
+    var availableLocations = [
+      "Plac Grunwaldzki, Wrocław",
+      "Kolejowa 4, Trzebnica",
+      "Oława",
+      "Aleja Bielany, Wrocław",
+      "Dworzec Główny, Wrocław",
+      "Mirków",
+      "Smolec",
+      "Oleśnica"
+      // Dodaj więcej propozycji lokalizacji, jeśli jest to konieczne
+    ];
+
+    $("#starting-place-input, #destination-input").autocomplete({
+      source: availableLocations
+    });
+  });
+
+  function searchDrivers() {
+    var startingPlace = encodeURIComponent(document.querySelector('input[placeholder="Miejsce początkowe"]').value);
+    var destination = encodeURIComponent(document.querySelector('input[placeholder="Miejsce docelowe"]').value);
+    var date = encodeURIComponent(document.querySelector('input[type="date"]').value);
+
+    window.location.href = "/drivers?startingPlace=" + startingPlace +
+                           "&destination=" + destination +
+                           "&date=" + date;
+  }
+
+  function redirectToNewPage() {
+    window.location.href = "/ogloszenie";
+  }
+  </script>
+</head>
+<body>
+  <section class="header">
+    <nav>
+        <a href="/"><img src="/static/images/pngwing.com.png"></a>
+        <div class="nav-links">
+            <ul>
+                <li><a href="/">HOME</a></li>
+                <li><a href="">CONTACT</a></li>
+                {% if 'user_id' in session %}
+                    <li><a href="/profile">
+                        <img src="/static/images/img.png" class="user-photo"></a></li>
+                {% else %}
+                    <li><a href="/login">LOGIN</a></li>
+                {% endif %}
+            </ul>
+        </div>
+    </nav>
+    <div class="text-box">
+        <h1>Najlepszy system wspólnych dojazdów do Wrocławia</h1>
+        <p>Wspólne dojazdy są prostsze niż się wydaje. Do zaoszczędzenia pieniędzy wystarczy połączenie się z pasującym kierowcą.</p>
+        <a href="" class="hero-btn">Dowiedz się więcej</a>
+    </div>
+</section>
+
+  <section class="kierowca">
+    <h1>Wyszukaj kierowcę dla ciebie</h1>
+    <p>Podaj miejsce początkowe, docelowe oraz datę podróży</p>
+</section>
+
+  <section class="search-container">
+    <section class="search-bar">
+      <input type="text" id="starting-place-input" placeholder="Miejsce początkowe">
+      <input type="text" id="destination-input" placeholder="Miejsce docelowe">
+      <input type="date">
+      <input type="checkbox" id="special-luggage">
+      <label for="special-luggage">Przewożę specjalny bagaż</label>
+      <button type="button" onclick="searchDrivers()">Szukaj</button>
+    </section>
+  </section>
+
+  <section class="przejazd-kierowca">
+    <button type="button" onclick="redirectToNewPage()">Dodaj przejazd jako kierowca</button>
+  </section>
+
+  <div class="map-container">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12833.189243455845!2d17.06153884547749!3d51.1078371408483!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470fe82b590f994b%3A0x25b58f5939f1c6d5!2sPasa%C5%BC%20Grunwaldzki!5e0!3m2!1spl!2spl!4v1685536591535!5m2!1spl!2spl" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+</div>
+</body>
+</html>

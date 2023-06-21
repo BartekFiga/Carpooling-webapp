@@ -1,0 +1,33 @@
+<html>
+<head>
+  <title>Zarejestruj się</title>
+  <link rel="stylesheet" type="text/css" href="/static/stylesignup.css">
+</head>
+<body>
+  <div class="signup-container">
+    <h1>Zarejestruj się</h1>
+    <form action="/signup" method="POST">
+      <label for="name">Imię:</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="surname">Nazwisko:</label>
+      <input type="text" id="surname" name="surname" required>
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="password">Hasło:</label>
+      <input type="password" id="password" name="password" required>
+
+      <label for="confirm-password">Potwierdź Hasło:</label>
+      <input type="password" id="confirm-password" name="confirm-password" required>
+
+      <button type="submit">Zarejestruj się</button>
+    </form>
+    {% if error %}
+    <p class="error-message">{{ error }}</p>
+    {% endif %}
+    <p class="login-link">Posiadasz już konto? <a href="/login">Zaloguj się</a></p>
+  </div>
+</body>
+</html>
