@@ -1,0 +1,165 @@
+/* styleprofile.css */
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+nav {
+  display: flex;
+  padding: 4% 6%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-links {
+  flex: 1;
+  text-align: right;
+}
+
+nav img {
+  width: 100px;
+}
+
+.nav-links ul li {
+  list-style: none;
+  text-align: right;
+  display: inline-block;
+  padding: 8px 12px;
+  position: relative;
+}
+
+.nav-links ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 13px;
+}
+
+.nav-links ul li::after {
+  content: '';
+  width: 100%;
+  height: 2px;
+  background: #f44336;
+  display: block;
+  margin: auto;
+  transition: 0.5s;
+}
+
+.nav-links ul li:hover::after {
+  width: 100%;
+}
+
+body {
+  background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)),
+    url(/static/images/carpool.jpg);
+  background-position: center;
+  background-size: cover;
+}
+
+.profile-container {
+  max-width: 700px;
+  margin: 10px auto;
+  padding: 40px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.profile-container p {
+  margin-bottom: 10px;
+}
+
+.logout-link {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.logout-link a {
+  color: #0160ad;
+  text-decoration: none;
+}
+
+.logout-link a:hover {
+  text-decoration: underline;
+}
+
+.profile-info {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.profile-photo img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center;
+  margin-right: 20px;
+}
+
+.profile-details p {
+  margin-bottom: 5px;
+  font-size: 17px;
+}
+
+.centered-heading {
+  text-align: center;
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.centered-heading::before {
+  content: "";
+  display: block;
+  width: 80%;
+  height: 2px;
+  background-color: #ddd;
+  margin: 0 auto;
+  position: absolute;
+  bottom: -10px;
+  left: 10%;
+}
+
+.rides-type {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.rides-type-column {
+  flex: 1;
+  padding: 0 10px;
+}
+
+.rides-type-heading {
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.rides-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: center;
+}
+
+.rides-table th,
+.rides-table td {
+  padding: 8px;
+  border-bottom: 1px solid #ddd;
+}
+
+.rides-table th {
+  background-color: #f5f5f5;
+}
+
+.rides-table tr:last-child td {
+  border-bottom: none;
+}

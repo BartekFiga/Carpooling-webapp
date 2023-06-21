@@ -1,0 +1,185 @@
+*{
+    margin:0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+
+}
+.header{
+    min-height: 100vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(4,9,30,0.7), rgba(4,9,30,0.7)),url(/static/images/carpool.jpg);
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+nav{
+    display: flex;
+    padding: 2% 6%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav img{
+    width: 100px;
+}
+.user-photo {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+}
+.nav-links{
+    flex: 1;
+    text-align: right;
+}
+.nav-links ul li{
+    list-style: none;
+    text-align: right;
+    display: inline-block;
+    padding: 8px 12px;
+    position: relative;
+}
+.nav-links ul li a{
+    color: #fff;
+    text-decoration: none;
+    font-size: 13px;
+}
+.nav-links ul li::after{
+    content: '';
+    width: 100%;
+    height: 2px;
+    background: #f44336;
+    display: block;
+    margin: auto;
+    transition: 0.5s;
+}
+.nav-links ul li:hover::after{
+    width: 100%;
+}
+.text-box{
+    width: 90%;
+    color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+}
+.text-box h1{
+    font-size: 62px;
+}
+.text-box p{
+    margin: 10px 0 40px;
+    font-size: 14px;
+    color: #fff;
+}
+.hero-btn{
+    display: inline-block;
+    text-decoration: none;
+    color: #fff;
+    border: 1px solid #fff;
+    padding: 12px 34px;
+    background: transparent;
+    position: relative;
+    cursor: pointer;
+}
+.hero-btn:hover{
+    border: 1px solid #f44336;
+    background: #f44336;
+    transition: 1s;
+}
+
+
+
+/*-------szukanie---------*/
+
+.kierowca{
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    padding-top: 100px;
+}
+h1{
+    font-size: 36px;
+    font-weight: 600;
+}
+
+p{
+    color: #777;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 22px;
+    padding: 0;
+}
+.search-container {
+    display: flex;
+    justify-content: center;
+    background-position: center;
+    align-items: center;
+    height: 20vh;
+  }
+
+  .search-bar {
+    display: flex;
+    margin-bottom: 10px;
+  }
+
+  .search-bar input[type="text"],
+  .search-bar input[type="date"] {
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    flex-grow: 1;
+    margin-right: 10px;
+  }
+  .search-bar input[type="checkbox"] {
+    margin-right: 5px;
+  }
+
+  .search-bar button {
+    padding: 8px 16px;
+    font-size: 16px;
+    background-color: #008cff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  .search-bar button:hover {
+    background-color: #0160ad;
+  }
+  .map-container{
+    padding-bottom: 70%;
+    display: flex;
+    background-position: center;
+    justify-content: center;
+    position: relative;
+}
+
+.map-container iframe{
+    height: 100%;
+    width: 100%;
+    left: 0;
+    right: 0;
+    position: relative;
+}
+
+.przejazd-kierowca {
+    text-align: center;
+    padding: 20px;
+  }
+
+  .przejazd-kierowca button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #008cff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  .przejazd-kierowca button:hover {
+    background-color: #0160ad;
+  }

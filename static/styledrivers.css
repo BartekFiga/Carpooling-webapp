@@ -1,0 +1,150 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    min-height: 100vh;
+    background-image: linear-gradient(rgba(4,9,30,0.7), rgba(4,9,30,0.7)),url(/static/images/carpool.jpg);
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+.user-photo {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+}
+
+nav{
+    display: flex;
+    padding: 2% 6%;
+    justify-content: space-between;
+    align-items: center;
+}
+nav img{
+    width: 100px;
+}
+nav-links{
+    flex: 1;
+    text-align: right;
+}
+.nav-links ul li{
+    list-style: none;
+    text-align: right;
+    display: inline-block;
+    padding: 8px 12px;
+    position: relative;
+}
+.nav-links ul li a{
+    color: #fff;
+    text-decoration: none;
+    font-size: 13px;
+}
+.nav-links ul li::after{
+    content: '';
+    width: 100%;
+    height: 2px;
+    background: #f44336;
+    display: block;
+    margin: auto;
+    transition: 0.5s;
+}
+.nav-links ul li:hover::after{
+    width: 100%;
+}
+
+.drivers{
+    margin: auto;
+    text-align: center;
+
+}
+h1{
+    font-size: 36px;
+    font-weight: 600;
+    padding: 0;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+
+}
+
+li {
+    margin-bottom: 10px;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    height: 100vh;
+
+}
+.window{
+  max-width: 700px;
+  margin: 10px auto;
+  padding: 40px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+.title{
+    text-align: center;
+    margin-top: 0;
+}
+.driver-list{
+    list-style: none ;
+    padding: 0;
+    margin-top: 20px;
+}
+.driver{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    text-align: left;
+}
+.driver-photo{
+    height: 135px;
+    width: 109px;
+}
+.driver-info{
+    text-align: left;
+    margin-top: 10px;
+    margin-left: 20px;
+    flex-grow: 1;
+    padding: 0;
+}
+
+
+.reservation-btn{
+    background-color:#008cff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    cursor: pointer;
+}
+.reservation-btn:hover{
+    background-color:#0160ad;
+}
+.reservation-btn:focus{
+    outline: none;
+}
+.subtitle{
+    color:#777;
+}
+

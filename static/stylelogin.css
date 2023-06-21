@@ -1,0 +1,87 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-position: center;
+  background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)),
+    url(/static/images/carpool.jpg);
+  background-size: cover;
+  position: relative;
+}
+
+.login-container {
+  max-width: 400px;
+  margin: 100px auto;
+  padding: 40px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+form label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+form input[type="text"],
+form input[type="password"],
+form input[type="email"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+button[type="submit"] {
+  width: 100%;
+  padding: 10px;
+  background-color: #0160ad;
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button[type="submit"]:hover {
+  background-color: #01233f;
+}
+
+p.signup-link {
+  text-align: center;
+  margin-top: 20px;
+}
+
+p.signup-link a {
+  color: #0160ad;
+  text-decoration: none;
+}
+
+p.signup-link a:hover {
+  text-decoration: underline;
+}
+
+p.back-button a {
+  color: #0160ad;
+  text-decoration: none;
+}
+
+p.back-button {
+  text-align: center;
+  margin-top: 20px;
+}
+
+p.back-button a:hover {
+  text-decoration: underline;
+}
